@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: reksmeys-react-tail-ingress
+  namespace: reksmeys
+spec:
+  tls:
+    - hosts:
+        - demo.auto-pilot.com
+      secretName: demo-auto-pilot-com-cert
+  rules:
+    - host: demo.auto-pilot.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: reksmeys-react-tail-svc
+                port:
+                  number: 3000
