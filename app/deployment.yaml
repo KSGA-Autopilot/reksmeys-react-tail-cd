@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reksmeys-react-tail-deployment
+  labels:
+    app: reksmeys-react-tail
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reksmeys-react-tail
+  template:
+    metadata:
+      labels:
+        app: reksmeys-react-tail
+    spec:
+      containers:
+        - name: reksmeys-react-tail
+          image: kshrdautopilot/reksmeys-react-tail
+          ports:
+            - containerPort: 3000
