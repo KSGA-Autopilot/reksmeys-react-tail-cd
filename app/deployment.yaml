@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: reksmeys-react-tail
-          image: kshrdautopilot/reksmeys-react-tail
+          image: kshrdautopilot/reksmeys-react-tail:2023-12-07-14-20-41
           ports:
             - containerPort: 3000
